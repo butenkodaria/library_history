@@ -1,148 +1,230 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Oswald:wght@200;300;400&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<meta name="color-scheme" content="dark light">
 <title>1941 — 1945 · Великая Отечественная война</title>
 <style>
-:root{
-  --accent:#c8a349;--accent-deep:#8f7320;--red:#b0413e;--course:#6a8ba8;
-  --radius:8px;--radius-sm:5px;--transition:.22s cubic-bezier(.4,0,.2,1);
-  --font-serif:'Georgia','Iowan Old Style','Times New Roman',serif;
-  --font-sans:'Inter','Segoe UI',Roboto,system-ui,-apple-system,sans-serif;
-  --font-mono:'JetBrains Mono','SF Mono','Consolas',monospace;
-}
-html[data-theme="dark"]{
-  --bg:#0d1014;--surface:#141a21;--surface-2:#181f27;--surface-3:#1c242e;
-  --border:#242e3a;--border-strong:#333f4d;--text:#d5dce5;--text-muted:#8b98a8;
-  --text-faint:#5c6775;--heading:#e8d9ac;--map-bg:#0a0d11;
-  --correct-bg:#0f2418;--correct-border:#4b9c68;--wrong-bg:#261010;--wrong-border:#b0413e;
-  --input-bg:#0a0d11;--input-border:#333f4d;--btn-bg:#c8a349;--btn-text:#1a1400;
-  --shadow:0 2px 8px rgba(0,0,0,.35);--shadow-hover:0 6px 20px rgba(0,0,0,.5);
-  --divider:linear-gradient(90deg,transparent,#333f4d 20%,#333f4d 80%,transparent);
-  --hl-bg:rgba(242,214,117,.18);--hl-text:#f2d675;
-}
-html[data-theme="light"]{
-  --bg:#f3efe6;--surface:#ffffff;--surface-2:#faf7f0;--surface-3:#f4efe3;
-  --border:#e0d6c0;--border-strong:#c4b795;--text:#2a2f36;--text-muted:#5c6674;
-  --text-faint:#8a94a1;--heading:#5a4520;--map-bg:#f8f5ee;
-  --correct-bg:#eef7f0;--correct-border:#4b9c68;--wrong-bg:#fdeeee;--wrong-border:#b0413e;
-  --input-bg:#ffffff;--input-border:#d8ccb2;--btn-bg:#8f7320;--btn-text:#ffffff;
-  --shadow:0 1px 4px rgba(120,100,60,.08);--shadow-hover:0 4px 14px rgba(120,100,60,.15);
-  --divider:linear-gradient(90deg,transparent,#d8ccb2 20%,#d8ccb2 80%,transparent);
-  --hl-bg:rgba(200,163,73,.22);--hl-text:#8f7320;
-}
+:root{--font-head:'Oswald','Bebas Neue','Arial Narrow',Impact,sans-serif;--font-body:'Montserrat','Segoe UI',system-ui,sans-serif;--ease:.2s ease}
+html[data-theme="dark"]{--bg:#050403;--glow:rgba(208,120,40,.28);--panel:#160e0a;--panel-2:#20140d;--border:#3a2a1e;--text:#e7ddcd;--muted:#ad9d8c;--faint:#7d6e60;--g1:#f8dba0;--g2:#c9772f;--gold:#e2a653;--red:#d4634a;--paper:#d9c8a2;--paper-text:#2a1d11;--paper-muted:#5d4730;--ok:#7cc796;--ok-bg:#0f2417;--bad-bg:#2a1311;--btn1:#d08457;--btn2:#6e2f1b;--hl:#5c4a0c;--hl-t:#fff1b0}
+html[data-theme="light"]{--bg:#cdb995;--glow:rgba(120,70,20,.22);--panel:#e8dbbd;--panel-2:#dfcfab;--border:#a98f61;--text:#2a1d11;--muted:#5b4630;--faint:#7c6547;--g1:#7b4a15;--g2:#35190a;--gold:#7a4a14;--red:#8c2a1b;--paper:#f3e9d0;--paper-text:#2a1d11;--paper-muted:#5d4730;--ok:#1f6b3a;--ok-bg:#dcebd8;--bad-bg:#f0d7cf;--btn1:#8a4a28;--btn2:#4a1f10;--hl:#ffe27a;--hl-t:#2a1d11}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.6;padding:2rem 1rem 4rem;min-height:100vh;transition:background-color var(--transition),color var(--transition)}
-.container{max-width:920px;margin:0 auto}
-.theme-toggle{position:fixed;top:1.25rem;right:1.25rem;z-index:100;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--accent);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);transition:all var(--transition)}
-.theme-toggle:hover{border-color:var(--accent);transform:rotate(20deg)}
-header.page-header{text-align:center;margin-bottom:1.5rem;padding-bottom:1.25rem;position:relative}
-header.page-header::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:50%;height:1px;background:var(--divider)}
-header.page-header h1{font-family:var(--font-serif);font-size:clamp(1.8rem,5vw,2.6rem);font-weight:700;color:var(--heading);letter-spacing:.02em;margin-bottom:.4rem;line-height:1.15}
-header.page-header .subtitle{font-size:.7rem;color:var(--text-faint);letter-spacing:.26em;text-transform:uppercase;font-weight:500}
-.search-box{position:relative;margin-bottom:1.5rem}
-.search-input{width:100%;height:52px;padding:0 1rem 0 3.2rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);font-family:var(--font-sans);font-size:.9rem;transition:border-color var(--transition),box-shadow var(--transition)}
-.search-input::placeholder{color:var(--text-faint)}
-.search-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,163,73,.12)}
-.search-icon{position:absolute;left:16px;top:0;height:100%;width:20px;display:flex;align-items:center;justify-content:center;color:var(--text-faint);pointer-events:none}
-.search-icon svg{width:18px;height:18px;display:block;flex-shrink:0}
-.search-input:focus ~ .search-icon{color:var(--accent)}
-.search-hint{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.65rem;padding-left:.2rem;font-family:var(--font-mono);font-size:.68rem;color:var(--text-faint)}
-.search-hint .hint-item{padding:.15rem .5rem;border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:all var(--transition)}
-.search-hint .hint-item:hover{border-color:var(--accent);color:var(--accent)}
-.year-section{margin-bottom:2.5rem}
-.year-title{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
-.year-title .year-num{font-family:var(--font-serif);font-size:clamp(1.8rem,4.5vw,2.3rem);font-weight:700;color:var(--accent);line-height:1}
-.year-title .year-label{font-size:.72rem;color:var(--text-faint);letter-spacing:.24em;text-transform:uppercase;font-weight:500}
-.year-title .year-meta{margin-left:auto;font-family:var(--font-mono);font-size:.7rem;color:var(--text-faint)}
-.battle-item{display:flex;align-items:flex-start;gap:1rem;padding:1.3rem 1.45rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.8rem;box-shadow:var(--shadow);cursor:pointer;position:relative;overflow:hidden;text-decoration:none;color:inherit;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
-.battle-item::before{content:"";position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--accent);opacity:.4;transition:opacity var(--transition)}
-.battle-item:hover{border-color:var(--border-strong);box-shadow:var(--shadow-hover);transform:translateY(-1px)}
-.battle-item:hover::before{opacity:1}
+body{font-family:var(--font-body);font-size:.98rem;line-height:1.7;color:var(--text);min-height:100vh;padding:0 1rem 3rem;background:radial-gradient(ellipse 70% 38% at 50% 0,var(--glow),transparent 70%),var(--bg);background-repeat:no-repeat;transition:background-color .25s}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.container{max-width:960px;margin:0 auto}
+.theme-toggle{position:fixed;top:1rem;right:1rem;z-index:100;width:40px;height:40px;border-radius:50%;border:1px solid var(--gold);background:var(--panel);color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem}
+header.page-header{text-align:center;padding:5.5rem 0 3rem}
+header.page-header h1{font-family:var(--font-head);font-weight:300;font-size:clamp(4.2rem,17vw,9.5rem);line-height:.95;letter-spacing:.01em;background:linear-gradient(180deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.9rem}
+header.page-header .subtitle{font-size:.78rem;letter-spacing:.5em;color:var(--muted);font-weight:500}
+.hero-quote{max-width:34rem;margin:3rem auto 0;font-family:var(--font-head);font-weight:300;font-size:clamp(1.4rem,3.6vw,2rem);line-height:1.25;color:var(--text)}
+.hero-quote small{display:block;margin-top:.8rem;font-family:var(--font-body);font-size:.78rem;color:var(--faint)}
+.search-box{position:relative;margin-bottom:2.5rem}
+.search-input{width:100%;height:54px;padding:0 1.2rem 0 3.3rem;border:1px solid var(--border);border-radius:999px;background:var(--panel);color:var(--text);font:inherit;font-size:.9rem}
+.search-input::placeholder{color:var(--faint)}
+.search-input:focus{outline:none;border-color:var(--gold)}
+.search-icon{position:absolute;left:20px;top:0;height:54px;display:flex;align-items:center;color:var(--faint);pointer-events:none}
+.search-icon svg{width:18px;height:18px}
+.search-input:focus ~ .search-icon{color:var(--gold)}
+.search-hint{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem;padding-left:.4rem;font-size:.76rem}
+.search-hint .hint-item{padding:.2rem .85rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);cursor:pointer;transition:var(--ease)}
+.search-hint .hint-item:hover{border-color:var(--gold);color:var(--gold)}
+.year-section{margin-bottom:3.5rem}
+.year-title{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.year-title .year-num{font-family:var(--font-head);font-weight:200;font-size:clamp(3.8rem,12vw,6.5rem);line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold)}
+.year-title .year-label{font-family:var(--font-head);font-weight:300;font-size:1.3rem;color:var(--muted)}
+.year-title .year-meta{margin-left:auto;font-size:.75rem;color:var(--faint)}
+.battle-item{display:flex;align-items:baseline;gap:1.2rem;padding:1.15rem .4rem;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;cursor:pointer;transition:background-color var(--ease)}
+.battle-item:hover{background:var(--panel)}
 .battle-item.hidden{display:none}
-.battle-item .num{flex-shrink:0;font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:var(--text-faint);padding:.3rem .6rem;border:1px solid var(--border-strong);border-radius:var(--radius-sm);background:var(--surface-3);margin-top:.15rem;transition:color var(--transition),border-color var(--transition)}
-.battle-item:hover .num{color:var(--accent);border-color:var(--accent)}
+.battle-item .num{flex-shrink:0;min-width:3rem;font-family:var(--font-head);font-weight:300;font-size:1.6rem;line-height:1;color:var(--faint);transition:color var(--ease)}
+.battle-item:hover .num{color:var(--gold)}
 .battle-item .body{flex:1;min-width:0}
-.battle-item h3{font-family:var(--font-serif);font-size:clamp(1rem,2.4vw,1.15rem);font-weight:700;color:var(--text);line-height:1.35;margin-bottom:.35rem;transition:color var(--transition)}
-.battle-item:hover h3{color:var(--accent)}
-.battle-item .date{font-family:var(--font-mono);font-size:.72rem;color:var(--text-faint);letter-spacing:.03em;display:block;margin-bottom:.3rem}
-.battle-item .medinsky-line{font-family:var(--font-mono);font-size:.66rem;color:var(--accent-deep);letter-spacing:.03em;display:block}
-.battle-item .go{flex-shrink:0;color:var(--text-faint);font-size:.9rem;margin-top:.35rem;transition:transform var(--transition),color var(--transition)}
-.battle-item:hover .go{color:var(--accent);transform:translateX(3px)}
-mark.hl{background:var(--hl-bg);color:var(--hl-text);padding:0 .15em;border-radius:2px;font-weight:600}
-.battle-page .back{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1rem;border:1px solid var(--border-strong);border-radius:var(--radius-sm);background:var(--surface);color:var(--text-muted);font-size:.76rem;font-weight:600;letter-spacing:.05em;cursor:pointer;transition:all var(--transition);margin-bottom:1.75rem;text-decoration:none}
-.battle-page .back:hover{border-color:var(--accent);color:var(--accent);background:var(--surface-2)}
-.battle-page .page-title{margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
-.battle-page .page-title .num{font-family:var(--font-mono);font-size:.74rem;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:.5rem;display:block}
-.battle-page .page-title h1{font-family:var(--font-serif);font-size:clamp(1.35rem,3.8vw,1.9rem);font-weight:700;color:var(--heading);line-height:1.25;margin-bottom:.5rem}
-.battle-page .page-title .date{font-family:var(--font-mono);font-size:.78rem;color:var(--text-faint)}
-.battle-page .page-title .medinsky-line{font-family:var(--font-mono);font-size:.72rem;color:var(--accent-deep);letter-spacing:.05em;margin-top:.5rem;display:block}
-.section{margin-bottom:1.1rem;padding:.9rem 1.05rem;background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius-sm)}
-.section:last-child{margin-bottom:0}
-.section.commanders{border-left-color:var(--accent)}
-.section.course{border-left-color:var(--course)}
-.section.outcome{border-left-color:var(--accent-deep);background:var(--surface-2)}
-.section.map-section{border-left-color:var(--border-strong);padding:.55rem}
-.section.tasks{border-left-color:var(--red);background:var(--surface-2)}
-.section-label{display:flex;align-items:center;gap:.5rem;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin-bottom:.6rem}
-.section-label::before{content:"";display:block;width:14px;height:1px;background:var(--accent);opacity:.7}
-.section.commanders .section-label{color:var(--accent-deep)}
-.section.course .section-label{color:var(--course)}
-.section.outcome .section-label{color:var(--accent)}
+.battle-item h3{font-family:var(--font-head);font-weight:400;font-size:clamp(1.2rem,3vw,1.5rem);line-height:1.25;color:var(--text);margin-bottom:.25rem}
+.battle-item:hover h3{color:var(--gold)}
+.battle-item .date{display:block;font-size:.82rem;color:var(--muted)}
+.battle-item .medinsky-line{display:block;font-size:.72rem;color:var(--faint);margin-top:.1rem}
+.battle-item .go{color:var(--faint);transition:transform var(--ease),color var(--ease)}
+.battle-item:hover .go{color:var(--gold);transform:translateX(4px)}
+mark.hl{background:var(--hl);color:var(--hl-t);padding:0 .12em;border-radius:3px}
+.battle-page{padding-top:4.5rem}
+.battle-page .back{display:inline-block;margin-bottom:2rem;font-size:.8rem;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px}
+.battle-page .back:hover{color:var(--gold);border-color:var(--gold)}
+.battle-page .page-title{margin-bottom:2.5rem}
+.battle-page .page-title .num{display:block;font-size:.78rem;letter-spacing:.3em;color:var(--gold);margin-bottom:.8rem}
+.battle-page .page-title h1{font-family:var(--font-head);font-weight:300;font-size:clamp(2.6rem,8vw,5.2rem);line-height:1.02;background:linear-gradient(180deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.9rem}
+.battle-page .page-title .date{font-family:var(--font-head);font-weight:300;font-size:1.3rem;color:var(--text)}
+.battle-page .page-title .medinsky-line{display:block;margin-top:.4rem;font-size:.75rem;color:var(--faint)}
+.section{position:relative;margin-bottom:1.5rem;padding:2rem 2.2rem;background:var(--panel);border:1px solid var(--border);border-radius:28px}
+.section-label{display:flex;align-items:center;gap:.7rem;font-family:var(--font-head);font-weight:400;font-size:1.5rem;color:var(--gold);margin-bottom:1rem;line-height:1.1}
+.section-label::before{content:"✦";font-size:.8rem}
+.section-text{font-size:.95rem;line-height:1.8;max-width:68ch}
+.section-text + .section-text{margin-top:.9rem}
+.names{font-style:italic;color:var(--muted)}
+.section.outcome,.section.deep{background:var(--paper);border-color:var(--paper);color:var(--paper-text)}
+.section.outcome .section-label,.section.deep .section-label{color:var(--paper-text)}
+.section.tasks{background:var(--panel-2)}
 .section.tasks .section-label{color:var(--red)}
-.section-text{color:var(--text);font-size:.88rem;line-height:1.7}
-.section-text + .section-text{margin-top:.6rem}
-.names{font-family:var(--font-serif);font-style:italic;letter-spacing:.01em;font-size:.9rem}
-.map-frame{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--map-bg);line-height:0}
-.map-frame img{width:100%;height:auto;display:block;filter:saturate(.85) contrast(1.02);transition:transform .5s ease, filter .3s ease}
-.map-frame:hover img{transform:scale(1.01);filter:saturate(1) contrast(1.05)}
-.map-caption{font-size:.7rem;color:var(--text-faint);margin-top:.5rem;line-height:1.45;font-style:italic;font-family:var(--font-serif)}
-.task{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem .95rem;margin-bottom:.6rem;font-size:.85rem}
-.task:last-child{margin-bottom:0}
-.task-num{display:inline-block;font-family:var(--font-mono);font-size:.68rem;font-weight:700;color:var(--text-faint);border:1px solid var(--border-strong);border-radius:2px;padding:.05rem .35rem;margin-right:.4rem;vertical-align:middle;line-height:1.5}
-.task-q{color:var(--text);line-height:1.65;margin-bottom:.6rem}
-.answer-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
-.answer-input{flex:1;min-width:170px;padding:.5rem .7rem;border:1px solid var(--input-border);border-radius:var(--radius-sm);background:var(--input-bg);color:var(--text);font-size:.83rem;transition:border-color var(--transition),box-shadow var(--transition)}
-.answer-input::placeholder{color:var(--text-faint)}
-.answer-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(200,163,73,.15)}
-.answer-input.correct{border-color:var(--correct-border);background:var(--correct-bg)}
-.answer-input.wrong{border-color:var(--wrong-border);background:var(--wrong-bg)}
-.check-btn{padding:.5rem 1rem;border:none;border-radius:var(--radius-sm);background:var(--btn-bg);color:var(--btn-text);font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:all var(--transition);white-space:nowrap}
-.check-btn:hover{filter:brightness(1.1);box-shadow:0 2px 8px rgba(200,163,73,.3)}
+.section.map-section{padding:1.2rem}
+.section.map-section .section-label{padding:.4rem 1rem 0}
+.map-frame{border-radius:18px;overflow:hidden;background:#000;line-height:0}
+.map-frame img{width:100%;height:auto;display:block}
+.map-caption{font-size:.76rem;color:var(--faint);padding:.7rem 1rem 0;line-height:1.5}
+.deep-hint{font-size:.82rem;color:var(--paper-muted);margin:-.3rem 0 1rem}
+.deep-item{border-top:1px solid rgba(42,29,17,.28)}
+.deep-q{width:100%;display:flex;align-items:center;gap:.9rem;padding:1rem .2rem;background:none;border:0;color:inherit;font:inherit;font-weight:600;font-size:.98rem;text-align:left;cursor:pointer}
+.deep-q .plus{flex-shrink:0;width:26px;height:26px;border:1px solid currentColor;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:400;transition:transform .25s ease}
+.deep-q[aria-expanded="true"] .plus{transform:rotate(45deg)}
+.deep-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.deep-a.open{grid-template-rows:1fr}
+.deep-a>div{overflow:hidden}
+.deep-a p{padding:0 .2rem 1.2rem 2.6rem;font-size:.93rem;line-height:1.8;max-width:64ch}
+.task{padding:1.1rem 0;border-top:1px solid var(--border)}
+.task-num{font-family:var(--font-head);font-size:1.1rem;color:var(--red);margin-right:.6rem}
+.task-q{line-height:1.65;margin-bottom:.8rem;font-size:.92rem}
+.answer-row{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.answer-input{flex:1;min-width:170px;padding:.5rem .2rem;border:0;border-bottom:1px solid var(--faint);background:transparent;color:var(--text);font:inherit;font-size:.88rem}
+.answer-input::placeholder{color:var(--faint)}
+.answer-input:focus{outline:none;border-color:var(--gold)}
+.answer-input.correct{border-color:var(--ok)}
+.answer-input.wrong{border-color:var(--red)}
+.check-btn{padding:.6rem 1.6rem;border:0;border-radius:999px;background:linear-gradient(180deg,var(--btn1),var(--btn2));color:#fff;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer}
+.check-btn:hover{filter:brightness(1.12)}
 .check-btn:active{transform:translateY(1px)}
-.result{margin-top:.55rem;padding:.5rem .7rem;border-radius:var(--radius-sm);font-size:.78rem;line-height:1.5;display:none;font-family:var(--font-mono)}
+.result{display:none;margin-top:.7rem;padding:.55rem .9rem;border-radius:14px;font-size:.84rem}
 .result.show{display:block}
-.result.ok{background:var(--correct-bg);border-left:2px solid var(--correct-border);color:var(--text)}
-.result.fail{background:var(--wrong-bg);border-left:2px solid var(--wrong-border);color:var(--text)}
-.result .tag{font-weight:700;letter-spacing:.06em;margin-right:.4rem}
-.result.ok .tag{color:var(--correct-border)}
-.result.fail .tag{color:var(--wrong-border)}
-footer{text-align:center;margin-top:3rem;padding-top:1.5rem;position:relative;font-family:var(--font-mono);font-size:.68rem;color:var(--text-faint);letter-spacing:.1em}
-footer::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:50%;height:1px;background:var(--divider)}
-.view{animation:fadeUp .35s ease}
-@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.no-results{text-align:center;padding:2.5rem 1rem;color:var(--text-faint);font-family:var(--font-mono);font-size:.8rem;display:none}
+.result.ok{background:var(--ok-bg);border:1px solid var(--ok)}
+.result.fail{background:var(--bad-bg);border:1px solid var(--red)}
+.result .tag{font-weight:700;margin-right:.4rem}
+.result.ok .tag{color:var(--ok)}
+.result.fail .tag{color:var(--red)}
+footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);text-align:center;font-size:.72rem;letter-spacing:.2em;color:var(--faint)}
+.view{animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.view{animation:none}html{scroll-behavior:auto}.deep-a,.deep-q .plus{transition:none}}
+.no-results{display:none;text-align:center;padding:2.5rem 1rem;color:var(--faint);font-size:.85rem}
 .no-results.show{display:block}
-.no-results .big{display:block;font-family:var(--font-serif);font-size:1.4rem;color:var(--text-muted);margin-bottom:.5rem}
+.no-results .big{display:block;font-family:var(--font-head);font-size:1.8rem;color:var(--muted)}
 @media (max-width:640px){
-  body{padding:1.2rem .65rem 3rem}
-  .theme-toggle{width:38px;height:38px;font-size:1rem;top:.9rem;right:.9rem}
-  .battle-item{padding:1.05rem 1.15rem;gap:.85rem}
-  .battle-item .num{font-size:.68rem;padding:.25rem .5rem}
-  .section{padding:.75rem .85rem}
-  .section-text{font-size:.85rem}
-  .answer-input{font-size:.8rem}
-  .check-btn{font-size:.7rem;padding:.45rem .85rem}
-  .year-title .year-meta{display:none}
-  .search-input{height:48px;padding-left:3rem}
-  .search-icon{left:14px}
+ header.page-header{padding:4.5rem 0 2rem}
+ .section{padding:1.5rem 1.2rem;border-radius:22px}
+ .battle-item{gap:.8rem}
+ .battle-item .num{min-width:2.2rem;font-size:1.3rem}
+ .year-title .year-meta{display:none}
+ .deep-a p{padding-left:.2rem}
 }
+html[data-theme="dark"]{color-scheme:dark}
+html[data-theme="light"]{color-scheme:only light}
+body{position:relative}
+.theme-toggle{position:absolute}
+.section.deep{background:radial-gradient(ellipse at 50% 0,#3d1f11,#1b0e08 72%);border:1px solid #6b4a2a;color:#efe3cc;border-radius:44px 44px 120px 44px;padding:3.2rem 2.4rem 3.6rem;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.section.deep::before{content:"";position:absolute;inset:12px;border:1px solid rgba(230,184,101,.45);border-radius:34px 34px 110px 34px;pointer-events:none}
+.deep-head{text-align:center;margin-bottom:1.8rem}
+.section.deep .section-label{justify-content:center;font-size:clamp(2rem,6vw,3rem);font-weight:300;color:#f3d79a;margin-bottom:.5rem}
+.section.deep .section-label::before,.section.deep .section-label::after{content:"✦";font-size:.7rem;color:#e6b865}
+.orn-line{display:flex;align-items:center;gap:.9rem;max-width:19rem;margin:0 auto .9rem;color:#e6b865;font-size:1.2rem}
+.orn-line::before,.orn-line::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#e6b865)}
+.orn-line::after{background:linear-gradient(270deg,transparent,#e6b865)}
+.section.deep .deep-hint{color:#c2ae8c;margin:0}
+.section.deep .deep-item{border:1px solid rgba(230,184,101,.3);border-radius:26px;margin-bottom:.75rem;padding:0 1.1rem;background:rgba(255,235,200,.04);transition:background-color .25s,border-color .25s}
+.section.deep .deep-item:has(.deep-q[aria-expanded="true"]){background:rgba(230,184,101,.11);border-color:rgba(230,184,101,.65)}
+.section.deep .deep-q{color:#f6ead3;padding:1.05rem .2rem}
+.section.deep .deep-q .plus{border:0;border-radius:0;width:22px;height:22px;background:#e6b865;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%)}
+.section.deep .deep-q[aria-expanded="true"] .plus{transform:rotate(135deg) scale(1.15);background:#fff1c8}
+.section.deep .deep-a p{color:#e6d9bf}
+.sp{position:absolute;pointer-events:none;width:var(--s,16px);height:var(--s,16px);background:#fff1c8;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);animation:tw 5s ease-in-out infinite}
+.sp.s1{--s:22px;top:7%;left:6%}.sp.s2{--s:12px;top:14%;right:9%;animation-delay:1.5s}.sp.s3{--s:16px;top:46%;left:3%;animation-delay:3s}.sp.s4{--s:26px;bottom:9%;right:7%;animation-delay:.8s}.sp.s5{--s:12px;bottom:15%;left:12%;animation-delay:2.2s}
+@keyframes tw{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1.1)}}
+@media (prefers-reduced-motion:reduce){.sp{animation:none;opacity:.8}}
+@media (max-width:640px){.section.deep{padding:2.6rem 1.1rem 3rem;border-radius:32px 32px 80px 32px}.section.deep::before{border-radius:24px 24px 70px 24px;inset:9px}.section.deep .deep-item{padding:0 .8rem}.section.deep .deep-a p{padding-left:.2rem}}
+html[data-theme="light"]{--bg:#ecd5a4;--glow:rgba(222,140,34,.38);--panel:#f8edce;--panel-2:#f2e0b4;--border:#c99a46;--text:#2a1608;--muted:#5a3a1c;--faint:#85603a;--g1:#c07a1a;--g2:#6e2f0c;--gold:#a8590f;--red:#9a2a14;--paper:#fbf2d9;--paper-text:#2a1608;--paper-muted:#5a3a1c;--btn1:#c9772f;--btn2:#7a3512;--b1:rgba(236,160,50,.45);--b2:rgba(168,89,15,.7);--b-text:#fff8e6}
+html[data-theme="dark"]{--gold:#f2b64f;--g1:#ffe3a3;--g2:#d9822b;--b1:rgba(242,182,79,.35);--b2:rgba(201,119,47,.65);--b-text:#fff3d6}
+html[data-theme="light"] .section.deep{background:radial-gradient(ellipse at 50% 0,#fff7df,#f1d99c 78%);border-color:#b98530;color:#3a2210;box-shadow:0 14px 36px rgba(150,95,20,.25)}
+html[data-theme="light"] .section.deep::before{border-color:rgba(168,89,15,.55)}
+html[data-theme="light"] .section.deep .section-label{color:#6e2f0c}
+html[data-theme="light"] .section.deep .section-label::before,html[data-theme="light"] .section.deep .section-label::after,html[data-theme="light"] .orn-line{color:#a8590f}
+html[data-theme="light"] .orn-line::before{background:linear-gradient(90deg,transparent,#a8590f)}
+html[data-theme="light"] .orn-line::after{background:linear-gradient(270deg,transparent,#a8590f)}
+html[data-theme="light"] .section.deep .deep-hint{color:#6b4a28}
+html[data-theme="light"] .section.deep .deep-item{border-color:rgba(168,89,15,.4);background:rgba(255,250,235,.55)}
+html[data-theme="light"] .section.deep .deep-item:has(.deep-q[aria-expanded="true"]){background:#fffaf0;border-color:#a8590f}
+html[data-theme="light"] .section.deep .deep-q{color:#3a2210}
+html[data-theme="light"] .section.deep .deep-q .plus{background:#c07a1a}
+html[data-theme="light"] .section.deep .deep-q[aria-expanded="true"] .plus{background:#8a3d10}
+html[data-theme="light"] .section.deep .deep-a p{color:#4a2e16}
+html[data-theme="light"] .sp{background:#c9892a}
+.section.facts{background:var(--panel-2)}
+.facts-hint{font-size:.85rem;color:var(--muted);margin:-.4rem 0 .8rem}
+.pond{--h:290px;position:relative;height:var(--h);overflow:hidden;border-radius:26px;border:1px solid var(--border);background:radial-gradient(ellipse at 50% 110%,var(--glow),transparent 70%),var(--panel)}
+.bubble{position:absolute;top:100%;left:var(--x);width:var(--sz);height:var(--sz);margin-left:calc(var(--sz) / -2);padding:0;border:0;background:none;cursor:pointer;animation:rise var(--dur) linear var(--delay) infinite}
+.bubble:hover,.bubble:focus-visible{animation-play-state:paused}
+.bubble.pop{animation-play-state:paused;pointer-events:none}
+.orb{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;border:1px solid rgba(255,255,255,.6);color:var(--b-text);font-family:var(--font-head);font-size:1.7rem;background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.95) 0 7%,rgba(255,255,255,.2) 8% 34%,transparent 35%),radial-gradient(circle at 50% 55%,var(--b1),var(--b2));box-shadow:inset 0 0 16px rgba(255,255,255,.35),0 6px 16px rgba(0,0,0,.2)}
+.bubble.pop .orb{animation:pop .3s ease-out forwards}
+@keyframes rise{0%{transform:translate(0,0)}25%{transform:translate(14px,calc(var(--h) * -.3))}50%{transform:translate(-12px,calc(var(--h) * -.6))}75%{transform:translate(10px,calc(var(--h) * -.85))}100%{transform:translate(0,calc(var(--h) * -1 - 110px))}}
+@keyframes pop{0%{transform:scale(1);opacity:1}40%{transform:scale(1.3);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+.pond-done{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1.5rem;font-weight:300;color:var(--muted)}
+.fact-card{display:flex;gap:.9rem;align-items:flex-start;margin-top:.8rem;padding:1rem 1.2rem;border-radius:20px;background:var(--paper);color:var(--paper-text);border:1px solid var(--border);animation:cardIn .35s ease}
+.fact-card::before{content:"";flex-shrink:0;width:20px;height:20px;margin-top:.2rem;background:var(--gold);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%)}
+.fact-card p{font-size:.93rem;line-height:1.7}
+@keyframes cardIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.again{margin-top:1rem;padding:.55rem 1.4rem;border:0;border-radius:999px;background:linear-gradient(180deg,var(--btn1),var(--btn2));color:#fff;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer}
+@media (max-width:640px){.pond{--h:330px}}
+@media (prefers-reduced-motion:reduce){.bubble{animation:none;top:calc(8% + var(--i) * 30%)}.bubble.pop .orb{animation:none;opacity:0}}
+header.page-header{position:relative}
+header.page-header h1{position:relative;z-index:1}
+header.page-header::before,header.page-header::after{content:"";position:absolute;top:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 190'%3E%3Cdefs%3E%3CradialGradient id='r' cx='.4' cy='.35'%3E%3Cstop offset='0' stop-color='%23f8ebc8'/%3E%3Cstop offset='1' stop-color='%23d8b878'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e2b866'/%3E%3Cstop offset='.5' stop-color='%237d4f18'/%3E%3Cstop offset='1' stop-color='%23e8c070'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M60 0V50' stroke='%23a8732c' stroke-width='3' stroke-dasharray='1 3.6' stroke-linecap='round'/%3E%3Ccircle cx='60' cy='60' r='9' fill='none' stroke='url(%23b)' stroke-width='3.5'/%3E%3Crect x='52' y='66' width='16' height='10' rx='3' fill='url(%23b)'/%3E%3Ccircle cx='60' cy='128' r='50' fill='url(%23b)'/%3E%3Ccircle cx='60' cy='128' r='43' fill='url(%23r)' stroke='%236b4210' stroke-width='1.5'/%3E%3Ccircle cx='60' cy='128' r='38' fill='none' stroke='%234a2e12' stroke-width='5' stroke-dasharray='1.2 18.7'/%3E%3Cg font-family='Georgia,serif' font-size='11' fill='%232e1b0a' text-anchor='middle'%3E%3Ctext x='60' y='103'%3EXII%3C/text%3E%3Ctext x='93' y='132'%3EIII%3C/text%3E%3Ctext x='60' y='164'%3EVI%3C/text%3E%3Ctext x='27' y='132'%3EIX%3C/text%3E%3C/g%3E%3Ccircle cx='47' cy='146' r='8' fill='none' stroke='%238a5a1c' stroke-width='1.5'/%3E%3Cpath d='M60 128V106M60 128L79 137' stroke='%231e1208' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='60' cy='128' r='3.5' fill='%231e1208'/%3E%3C/svg%3E") no-repeat top center/contain;pointer-events:none;transform-origin:top center}
+header.page-header::before{left:4%;width:84px;height:176px;animation:sway 7s ease-in-out infinite}
+header.page-header::after{right:14%;width:62px;height:130px;animation:sway 9s ease-in-out infinite reverse}
+@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.medal{position:relative;display:flex;align-items:center;justify-content:center;width:92px;height:92px;margin:8px 0 1.5rem 8px;padding:6px;border-radius:50%;background:conic-gradient(from 20deg,#f6dc9c,#8a5a1c,#f6dc9c,#8a5a1c,#f6dc9c);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.medal::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:3px dotted var(--gold);opacity:.85}
+.medal span{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;border:2px solid rgba(0,0,0,.4);background:radial-gradient(circle at 35% 30%,#2e1a0e,#120a05);color:#f6dc9c;font-family:var(--font-head);font-weight:300;font-size:2.2rem}
+html[data-theme="light"] .medal span{background:radial-gradient(circle at 35% 30%,#fff7df,#f0d79a);color:#6e2f0c}
+.battle-page .page-title{position:relative}
+.scrap{filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));position:absolute;top:0;right:0;width:230px;transform:rotate(3deg)}
+.scrap-in{padding:1.4rem 1rem 1.1rem 1.5rem;background:linear-gradient(160deg,#f1e2bb,#dcc48e);clip-path:polygon(0 24%,7% 18%,11% 22%,18% 10%,26% 14%,34% 4%,44% 8%,52% 0,100% 0,100% 100%,0 100%);color:#3a2a1c;font-family:'Caveat','Segoe Script',cursive;font-size:1.12rem;line-height:1.35}
+@media (min-width:900px){.battle-page .page-title{padding-right:260px}}
+@media (max-width:899px){.scrap{position:relative;width:100%;margin-top:1.2rem;transform:rotate(-1deg)}}
+.map-frame{padding:14px;position:relative;overflow:visible;border-radius:14px;background:linear-gradient(135deg,#f6dc9c,#8a5a1c 38%,#e8bd6a 62%,#7a4d17);box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.map-frame::before{content:"";position:absolute;inset:7px;border:2px dotted rgba(255,240,200,.9);border-radius:9px;pointer-events:none}
+.map-frame img{border-radius:4px;border:2px solid #2a1608}
+.cn{position:absolute;width:64px;height:64px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23c9892a' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 78V22C3 11 11 3 22 3H78'/%3E%3Cpath d='M11 78V30C11 20 20 11 30 11H78' stroke-width='1'/%3E%3Cpath d='M24 24c9 0 15 6 15 14s-9 11-13 6 0-11 6-8'/%3E%3Cpath d='M40 24c6-6 14-6 22-2'/%3E%3Cpath d='M24 40c-6 6-6 14-2 22'/%3E%3C/g%3E%3Ccircle cx='24' cy='24' r='3' fill='%23c9892a'/%3E%3C/svg%3E") no-repeat center/contain;pointer-events:none}
+.cn.c1{top:14px;left:14px}.cn.c2{top:14px;right:14px;transform:scaleX(-1)}.cn.c3{bottom:14px;left:14px;transform:scaleY(-1)}.cn.c4{bottom:14px;right:14px;transform:scale(-1)}
+.section.deep{--ob1:rgba(255,236,190,.26);--ob2:rgba(230,184,101,.07);--obr:rgba(255,240,200,.6);--ot:#fff1c8}
+html[data-theme="light"] .section.deep{--ob1:rgba(214,140,40,.3);--ob2:rgba(168,89,15,.06);--obr:rgba(138,61,16,.55);--ot:#8a3d10}
+.section.deep .pond{--h:400px;margin-top:1.2rem;border-radius:30px;border:1px dashed rgba(230,184,101,.45);background:transparent}
+html[data-theme="light"] .section.deep .pond{border-color:rgba(138,61,16,.4)}
+.orb{border:1px solid var(--obr,rgba(255,255,255,.6));color:var(--ot,#fff);font-size:1.6rem;background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.9) 0 6%,rgba(255,255,255,.18) 7% 30%,transparent 31%),radial-gradient(circle at 50% 55%,var(--ob2,rgba(255,255,255,.08)),var(--ob1,rgba(255,255,255,.25)));box-shadow:inset 0 0 14px rgba(255,255,255,.3)}
+.section.deep .pond-done{color:inherit;opacity:.75}
+.section.deep .fact-card{background:rgba(255,250,235,.1);border:1px solid rgba(230,184,101,.5);color:inherit}
+html[data-theme="light"] .section.deep .fact-card{background:#fffaf0;border-color:#a8590f}
+.fact-card b{display:block;font-family:var(--font-head);font-weight:400;font-size:1.15rem;margin-bottom:.15rem}
+.section.deep .again{margin-top:1rem}
+.pond-hint{margin-top:1.4rem !important;text-align:center}
+@media (max-width:640px){.section.deep .pond{--h:430px}.cn{width:44px;height:44px}header.page-header::before{width:50px;height:104px;left:2%}header.page-header::after{display:none}.medal{width:76px;height:76px}.medal span{font-size:1.8rem}}
+@media (prefers-reduced-motion:reduce){header.page-header::before,header.page-header::after{animation:none}}
+
+.section.deep .pond{position:absolute;inset:0;margin:0;border:0;border-radius:0;z-index:3;pointer-events:none;overflow:hidden;--h:600px}
+.section.deep .bubble{pointer-events:auto}
+.section.deep .orb{background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.55) 0 6%,rgba(255,255,255,.08) 7% 30%,transparent 31%),radial-gradient(circle at 50% 55%,transparent 55%,rgba(255,236,190,.22));border:1.5px solid rgba(255,255,255,.55);box-shadow:inset 0 0 12px rgba(255,255,255,.25)}
+html[data-theme="light"] .section.deep .orb{background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.8) 0 6%,rgba(255,255,255,.15) 7% 30%,transparent 31%),radial-gradient(circle at 50% 55%,transparent 55%,rgba(168,89,15,.18));border-color:rgba(138,61,16,.5)}
+.section.deep .pond-done{pointer-events:none}
+.section.deep .fact-list{position:relative;z-index:2;margin-top:1.2rem}
+.section.deep .fact-card p{font-size:.85rem;line-height:1.55}
+
+.section.deep .pond,.section.deep .fact-list{display:none}
+.mini-title{margin-top:1.4rem;font-family:var(--font-head);font-weight:300;font-size:1.3rem;text-align:center;color:inherit}
+.mini-facts{list-style:none;margin-top:.7rem}
+.mini-facts li{position:relative;padding:.45rem 0 .45rem 1.5rem;font-size:.85rem;line-height:1.55;opacity:.92}
+.mini-facts li::before{content:"";position:absolute;left:.1rem;top:.85rem;width:11px;height:11px;background:#e6b865;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%)}
+html[data-theme="light"] .mini-facts li::before{background:#a8590f}
 </style>
 </head>
 <body>
-<button class="theme-toggle" id="themeToggle"><span id="themeIcon">☀</span></button>
+<button class="theme-toggle" id="themeToggle" aria-label="Сменить тему"><span id="themeIcon">☀</span></button>
 <div class="container"><div id="app"></div></div>
 <script>
 (function(){
@@ -499,6 +581,128 @@ const BATTLES = [
 ]}
 ];
 
+const DEEP = {
+brest:[
+{h:'Здесь подписали «похабный мир»',t:'В марте 1918 года именно в Брест-Литовске (в здании цитадели) был подписан сепаратный мир между Советской Россией и Германией с союзниками.'},
+{h:'Писатель, вернувший имя защитникам',t:'Долгое время об обороне почти не знали. В 1950-е годы историю по крупицам собирал писатель С.С. Смирнов, его книга «Брестская крепость» сделала подвиг известным всей стране.'}],
+smolensk:[
+{h:'Сын Сталина в плену',t:'16 июля 1941 года в районе Лиозно (под Витебском) в плен попал старший лейтенант Яков Джугашвили, старший сын Сталина.'},
+{h:'Первые гвардейцы',t:'В ходе Ельнинской операции (30 августа — 8 сентября 1941) 100-я и 127-я стрелковые дивизии первыми получили почётное звание гвардейских.'}],
+moscow:[
+{h:'Заседание на станции метро',t:'6 ноября 1941 года торжественное заседание к годовщине Октября провели на платформе станции «Маяковская», а не в Большом театре.'},
+{h:'Донесение из Токио',t:'Разведчик Рихард Зорге сообщил, что Япония не собирается нападать на СССР. Это позволило перебросить под Москву часть сибирских и дальневосточных дивизий.'}],
+leningrad:[
+{h:'Музыка в осаждённом городе',t:'9 августа 1942 года в блокадном Ленинграде впервые исполнили Седьмую симфонию Шостаковича. Оркестр собирали буквально по частям: многие музыканты были истощены.'},
+{h:'Метроном вместо тишины',t:'По радио стучал метроном: быстрый ритм означал воздушную тревогу, медленный — отбой. Его называли «пульсом города».'}],
+tikhvin:[
+{h:'Родина композитора',t:'В Тихвине родился композитор Н.А. Римский-Корсаков. Город известен и Тихвинским Богородичным монастырём.'},
+{h:'Железнодорожный узел',t:'Тихвин — важная железнодорожная станция: через неё шли грузы к Ладоге для снабжения блокадного Ленинграда. Поэтому за него так отчаянно бились.'}],
+sevastopol:[
+{h:'Вторая оборона города',t:'Первая оборона Севастополя в Крымскую войну (1854–1855) длилась 349 дней. Поэтому оборону 1941–1942 годов называют второй героической обороной.'},
+{h:'Лучший снайпер',t:'Под Одессой и Севастополем воевала снайпер Людмила Павличенко. На её счету 309 подтверждённых уничтоженных солдат и офицеров противника.'}],
+kharkov:[
+{h:'Бывшая столица',t:'До 1934 года Харьков был столицей Советской Украины, поэтому его судьба имела не только военное, но и символическое значение.'},
+{h:'Погибшие генералы',t:'В боях под Барвенковом погибли генералы К.П. Подлас, А.М. Городнянский и Ф.Я. Костенко.'}],
+rzhev:[
+{h:'Строка Твардовского',t:'Стихотворение Александра Твардовского «Я убит подо Ржевом» стало одним из символов памяти об этих боях. Оно написано в 1945–1946 годах.'},
+{h:'Операция «Марс»',t:'Осенью 1942 года на этом же выступе провели операцию «Марс» под руководством Г.К. Жукова. Она не достигла цели и долго оставалась малоизвестной.'}],
+stalingrad:[
+{h:'Фельдмаршал, который сдался',t:'Гитлер присвоил Паулюсу звание фельдмаршала 30 января 1943 года. Расчёт был на то, что ни один немецкий фельдмаршал в плен не сдавался.'},
+{h:'Тракторный завод',t:'Сталинградский тракторный завод до последней возможности выпускал танки Т-34, а рабочие нередко вставали у орудий прямо в цехах.'}],
+kavkaz:[
+{h:'Горные стрелки «Эдельвейс»',t:'На Кавказ были направлены элитные горные стрелки дивизии «Эдельвейс». Они водрузили немецкий флаг на Эльбрусе — высочайшей вершине Кавказа.'},
+{h:'Малая земля',t:'Плацдарм Малая земля под Новороссийском удерживали 225 дней: с февраля по сентябрь 1943 года.'}],
+iskra:[
+{h:'Маршальское звание в день прорыва',t:'18 января 1943 года, в день прорыва блокады, Г.К. Жуков получил звание Маршала Советского Союза.'},
+{h:'Первый поезд',t:'Первый поезд по новой «Дороге Победы» прибыл в Ленинград 7 февраля 1943 года. Дорога проходила в зоне досягаемости немецкой артиллерии.'}],
+kursk:[
+{h:'Дебют новых танков',t:'Курская битва стала боевым дебютом тяжёлых немецких «Пантер» и самоходок «Фердинанд».'},
+{h:'Упреждающая артподготовка',t:'Зная время немецкого удара, Рокоссовский решился на артиллерийскую контрподготовку: огонь открыли за считанные минуты до начала вражеского наступления.'}],
+dnepr:[
+{h:'Ставка торопила',t:'Освободить Киев хотели к годовщине Октября, 7 ноября. Город освободили 6 ноября 1943 года.'},
+{h:'Неудачный десант',t:'В ночь на 24 сентября 1943 года высадили Днепровский воздушный десант. Из-за ошибок и сильного огня он понёс тяжёлые потери и не выполнил задачу.'}],
+'leningrad-novgorod':[
+{h:'Салют в честь снятия блокады',t:'27 января 1944 года в Ленинграде дали салют: 24 залпа из 324 орудий.'},
+{h:'Новгородский памятник',t:'Немцы разобрали памятник «Тысячелетие России» в Новгороде, готовя вывоз. После освобождения города его нашли и вернули на место.'}],
+'dnepr-karpaty':[
+{h:'Валлонцы в «котле»',t:'В Корсунь-Шевченковском «котле» оказалась и бригада СС «Валлония», набранная из бельгийских добровольцев.'},
+{h:'Маршальские погоны',t:'За Корсунь-Шевченковскую операцию И.С. Конев получил звание Маршала Советского Союза (20 февраля 1944).'}],
+'odessa-krym':[
+{h:'Одесские катакомбы',t:'В 1941–1944 годах в катакомбах под Одессой действовал партизанский отряд В.А. Молодцова-Бадаева.'},
+{h:'Ялта — через девять месяцев',t:'Спустя девять месяцев после освобождения Крыма в Ливадийском дворце, близ Ялты, прошла конференция лидеров СССР, США и Великобритании (февраль 1945).'}],
+vyborg:[
+{h:'Финский Выборг',t:'До 1944 года Выборг (по-фински Виипури) был одним из крупнейших городов Финляндии.'},
+{h:'Крупнейшая битва Севера',t:'Сражение у Тали-Ихантала летом 1944 года считается самым масштабным в истории Северной Европы.'}],
+bagration:[
+{h:'Парад пленных',t:'17 июля 1944 года по улицам Москвы провели колонну немецких пленных. После неё улицы демонстративно вымыли поливальными машинами.'},
+{h:'Рельсовая война',t:'В ночь на 20 июня 1944 года, накануне наступления, белорусские партизаны подорвали более 10 тысяч рельсов. Это парализовало немецкие перевозки.'}],
+lviv:[
+{h:'Операция «Буря»',t:'Одновременно с Красной Армией во Львове действовали отряды польской Армии Крайовой (операция «Буря»).'},
+{h:'Три названия города',t:'Лемберг, Львув, Львов: город сменил несколько названий и государств за последние 150 лет.'}],
+iassy:[
+{h:'Переворот короля Михая',t:'23 августа 1944 года молодой король Румынии Михай арестовал диктатора Иона Антонеску. До 1989 года эта дата была главным государственным праздником Румынии.'},
+{h:'Нефть Плоешти',t:'Нефтяные промыслы Плоешти, главный источник топлива для вермахта, перешли под контроль советских войск в конце августа 1944 года.'}],
+pribaltika:[
+{h:'Таллинская операция',t:'Таллин освободили 22 сентября 1944 года в ходе Таллинской операции Ленинградского фронта.'},
+{h:'Последний очаг на Сааремаа',t:'Последний очаг сопротивления на эстонской земле, полуостров Сырве на острове Сааремаа, подавили 24 ноября 1944 года.'}],
+belgrade:[
+{h:'Корпус Людвика Свободы',t:'В Восточно-Карпатской операции сражался чехословацкий корпус Л. Свободы. Позже он стал президентом Чехословакии.'},
+{h:'Похищение сына Хорти',t:'15 октября 1944 года Отто Скорцени похитил сына венгерского регента Хорти и сорвал его попытку выйти из войны.'}],
+petsamo:[
+{h:'Никель Петсамо',t:'В районе Петсамо добывали никель, жизненно важный для немецкой военной промышленности.'},
+{h:'Дом для Печенги',t:'До 1920 года Печенга принадлежала России, затем Финляндии (Петсамо). В 1944 году её вернули СССР.'}],
+budapest:[
+{h:'Швед, спасавший людей',t:'Шведский дипломат Рауль Валленберг спасал будапештских евреев. Он был задержан советскими военными в январе 1945 года и пропал без вести.'},
+{h:'Парламентёры',t:'29 декабря 1944 года советские парламентёры с ультиматумом, среди них капитан И.А. Остапенко, попали под огонь. Остапенко погиб.'}],
+'vistula-oder':[
+{h:'Освобождение Освенцима',t:'27 января 1945 года войска 1-го Украинского фронта освободили концлагерь Освенцим (Аушвиц).'},
+{h:'Спасённый Краков',t:'Краков удалось взять обходным манёвром, поэтому старый город уцелел.'}],
+pomerania:[
+{h:'«Вильгельм Густлов»',t:'30 января 1945 года у побережья Померании подлодка А.И. Маринеско потопила лайнер «Вильгельм Густлов», на борту которого были беженцы и военные.'},
+{h:'Помолвка с морем',t:'18 марта 1945 года в Колобжеге (Кольберге) состоялась символическая церемония «обручения Польши с морем».'}],
+prussia:[
+{h:'Могила Канта',t:'В Кёнигсберге находится могила философа Иммануила Канта. Она уцелела даже после уничтожения исторического центра города.'},
+{h:'Логово Гитлера',t:'В Восточной Пруссии, близ Растенбурга (ныне Кентшин), находилась ставка Гитлера «Вольфшанце». Там 20 июля 1944 года произошло неудавшееся покушение на фюрера.'}],
+vienna:[
+{h:'Пожар собора',t:'В апреле 1945 года в результате пожара серьёзно пострадал собор Святого Стефана, главный храм Вены.'},
+{h:'Австрия под оккупацией',t:'Советские войска ушли из Австрии только в 1955 году, после подписания Государственного договора.'}],
+berlin:[
+{h:'Фото с ретушью',t:'Знаменитый снимок «Водружение знамени над Рейхстагом» Евгения Халдея сделан 2 мая 1945 года. На оригинале у бойца были двое часов, и одни ретушью убрали.'},
+{h:'Первый комендант',t:'Первым советским комендантом Берлина стал генерал Николай Берзарин. Он организовал снабжение жителей города продовольствием.'}]
+};
+
+const FACTS = {
+brest:['Штурмовавшая крепость 45-я пехотная дивизия вермахта формировалась в Австрии, в родном городе Гитлера Линце.','Крепость построили в 1830–1840-х годах на месте старого города Брест-Литовска.','Монумент «Мужество» в Брестской крепости достигает высоты около 33,5 метра.','Командир 44-го стрелкового полка Пётр Гаврилов в 1957 году получил звание Героя Советского Союза.','Капитан Зубачев попал в плен и был освобождён из лагеря в 1945 году.'],
+smolensk:['14 июля 1941 года под Оршей батарея капитана Флёрова впервые применила в бою «Катюши».','Смоленск издавна называли «ключом-городом» на пути к Москве.','Ельнинский выступ стал местом первой успешной наступательной операции Красной Армии.','Смоленская крепостная стена XVI–XVII веков была построена под руководством Фёдора Коня.','Название «Ключ-город» закрепилось за Смоленском из-за его стратегического положения на пути к Москве.'],
+moscow:['На 23-м километре Ленинградского шоссе стоит памятник «Противотанковые ежи».','Москвичи сформировали 12 дивизий народного ополчения.','В декабре 1941 года морозы под Москвой достигали −30 °C и ниже.','На время войны Мавзолей Ленина замаскировали под жилой дом, а звёзды Кремля закрыли чехлами.','Из Москвы были эвакуированы правительственные учреждения в Куйбышев, но Сталин остался в столице.'],
+leningrad:['Из Эрмитажа эвакуировали более миллиона экспонатов, а подвалы музея стали бомбоубежищем.','В 1943 году в Ленинград привезли «ярославских котов» — бороться с крысами.','Сотрудники института растениеводства не тронули коллекцию зерна, несмотря на голод.','Дневник Тани Савичевой состоит из девяти страниц.','Шпиль Адмиралтейства закрыли чехлом, а купол Исаакиевского собора перекрасили в защитный цвет.','Блокадную норму хлеба в 125 граммов получали дети и иждивенцы с 20 ноября по 25 декабря 1941 года.'],
+tikhvin:['Тихвин находился в руках немцев менее месяца: с 8 ноября по 9 декабря 1941 года.','Освобождение Тихвина стало одним из первых успехов зимнего контрнаступления.'],
+sevastopol:['Немцы называли морских пехотинцев-черноморцев «чёрной смертью».','Первая оборона Севастополя в 1854–1855 годах длилась 349 дней.','Во время штурма использовали сверхтяжёлое орудие «Дора» калибром 800 миллиметров.','35-я береговая батарея сражалась до последних дней обороны.','Тяжёлое орудие «Дора» немцы доставили под Севастополь по железной дороге в разобранном виде.'],
+kharkov:['Харьков четыре раза переходил из рук в руки за время войны.','До 1934 года Харьков был столицей Советской Украины.','Харьков окончательно освободили 23 августа 1943 года.'],
+rzhev:['Ржев получил почётное звание «Город воинской славы» в 2007 году.','Ржевский мемориал советскому солдату открыт в 2020 году; его высота около 25 метров.','В повести Вячеслава Кондратьева «Сашка» описаны бои под Ржевом.'],
+stalingrad:['Фотограф Эммануил Евзерихин снял знаменитый «Детский хоровод» у фонтана в Сталинграде 23 августа 1942 года.','Сталинград получил название Волгоград только в 1961 году.','Фигура «Родина-мать зовёт!» на Мамаевом кургане, открытая в 1967 году, имеет высоту 85 метров.','Снайпер Василий Зайцев уничтожил более 200 солдат и офицеров противника.','Мельница в Сталинграде оставлена как руина-памятник и сегодня входит в мемориальный комплекс.','Сержант Яков Павлов за оборону дома получил звание Героя Советского Союза.'],
+kavkaz:['21 августа 1942 года немецкие горные стрелки подняли свой флаг на Эльбрусе.','Малая земля под Новороссийском держалась 225 дней.','Одной из главных целей вермахта была нефть Майкопа и Грозного.'],
+iskra:['Встреча фронтов состоялась в Рабочем посёлке № 1.','Крепость Орешек в Шлиссельбурге оставалась в руках защитников на протяжении всей блокады.','Построенная железная дорога получила название «Дорога Победы».'],
+kursk:['Лётчик Иван Кожедуб одержал свою первую победу именно в Курской битве.','Советская оборона была эшелонирована на глубину до 300 километров.','Курская битва — боевой дебют немецких «Пантер».','Плотность минирования на Курской дуге достигала до 1500 противотанковых мин на километр фронта.','Историки до сих пор спорят о точном числе танков под Прохоровкой.'],
+dnepr:['Многие бойцы форсировали Днепр на подручных средствах: брёвнах, бочках, плащ-палатках.','Решающий удар нанесли с Лютежского плацдарма, севернее Киева.','Командование хотело освободить Киев к годовщине Октября.'],
+'leningrad-novgorod':['27 января 1944 года в Ленинграде гремел салют из 324 орудий.','Новгород освободили 20 января 1944 года.','Янтарная комната с 1941 года находилась в Кёнигсберге, дальше её следы теряются.'],
+'dnepr-karpaty':['Корсунь-Шевченковский «котёл» иногда называют «Сталинградом на Днепре».','Генерал Ватутин был смертельно ранен в феврале 1944 года под Ровно.','Весенняя распутица 1944 года сильно осложняла наступление.'],
+'odessa-krym':['Первая оборона Одессы в 1941 году длилась 73 дня.','Штурм Сапун-горы 7 мая 1944 года стал ключом к освобождению Севастополя.','Остатки немцев в Крыму прижали к мысу Херсонес, откуда они пытались эвакуироваться морем.'],
+vyborg:['Маннергейм стал президентом Финляндии 4 августа 1944 года.','Позже Финляндия воевала против немцев в Лапландской войне (1944–1945).','Выборг — исторически один из крупнейших городов Финляндии.'],
+bagration:['Операция названа в честь полководца Отечественной войны 1812 года Петра Багратиона.','Операцию начали 23 июня 1944 года, через три года после начала войны.','Партизаны заранее взорвали десятки тысяч рельсов.','Операция продолжалась 68 дней: с 23 июня по 29 августа 1944 года.','Войска прошли с боями до 550–600 километров.'],
+lviv:['Одновременно с наступлением в городе шла польская операция «Буря».','Сандомирский плацдарм на Висле позже стал исходным рубежом для Висло-Одерской операции.','Львов освободили 27 июля 1944 года.'],
+iassy:['Румыния до 1989 года отмечала 23 августа как главный национальный праздник.','Кольцо окружения замкнулось у города Хуши.','Нефть Плоешти была главным источником топлива для вермахта.'],
+pribaltika:['Таллин был освобождён 22 сентября 1944 года.','Рига была освобождена 13 октября 1944 года.','Остатки группы армий «Север» продержались в Курляндии до мая 1945 года.'],
+belgrade:['Белград освободили 20 октября 1944 года вместе с югославскими партизанами Тито.','Чехословацкий корпус Людвика Свободы участвовал в Восточно-Карпатской операции.','Ужгород освободили 27 октября 1944 года.'],
+petsamo:['Никель Петсамо играл важную роль в немецкой военной промышленности.','Киркенес освободили 25 октября 1944 года.','Советские войска покинули северную Норвегию в сентябре 1945 года.'],
+budapest:['Осада Будапешта продлилась 102 дня.','В январе 1945 года немцы взорвали мосты через Дунай.','В марте 1945 года вермахт предпринял последнее крупное наступление у озера Балатон.'],
+'vistula-oder':['Начало наступления перенесли на 12 января — отчасти ради помощи союзникам в Арденнах.','Варшава после подавления восстания 1944 года была разрушена примерно на 85 %.','В районе Одера войска оказались в 60–70 километрах от Берлина.'],
+pomerania:['Именно под Данцигом (на Вестерплатте) 1 сентября 1939 года началась Вторая мировая война.','В боях участвовала 1-я армия Войска Польского.','В Колобжеге прошла церемония «обручения с морем».'],
+prussia:['С 1946 года Кёнигсберг называется Калининградом.','В Кёнигсберге похоронен философ Иммануил Кант.','Генерал Черняховский был одним из самых молодых командующих фронтом.'],
+vienna:['Памятник советским воинам на Шварценбергплац в Вене открыт в 1945 году.','Советские части обошли город через Венский лес.','Советские войска покинули Австрию в 1955 году.'],
+berlin:['Акт о капитуляции подписан в 22:43 по центральноевропейскому времени, уже после полуночи по Москве.','Для ночной атаки на Зееловские высоты применили около 140 прожекторов.','На стенах Рейхстага бойцы оставляли автографы.','Полевые кухни Красной Армии кормили жителей Берлина.','Знамя Победы хранится в Центральном музее Вооружённых Сил в Москве.','Рейхстаг не использовался как резиденция правительства: в нём заседал парламент.']
+};
+
 const $ = sel => document.querySelector(sel);
 const $$ = sel => document.querySelectorAll(sel);
 const el = (tag, cls, html) => { const e = document.createElement(tag); if(cls) e.className = cls; if(html !== undefined) e.innerHTML = html; return e; };
@@ -512,7 +716,7 @@ function renderIndex(){
 const root = $('#app'); root.innerHTML = '';
 const wrap = el('div', 'view');
 const header = el('header', 'page-header');
-header.innerHTML = '<h1>1941 — 1945</h1><p class="subtitle">Великая Отечественная война</p>';
+header.innerHTML = '<h1>1941 — 1945</h1><p class="subtitle">Великая Отечественная война</p><p class="hero-quote">Те, кто не знает истории, обречены повторять её.<small>Джордж Сантаяна</small></p>';
 wrap.appendChild(header);
 const searchBox = el('div', 'search-box');
 searchBox.innerHTML = '<input type="text" class="search-input" id="searchInput" placeholder="Поиск: битва, командующий, §33, страница 374..." autocomplete="off"><span class="search-icon">' + SEARCH_ICON_SVG + '</span><div class="search-hint"><span class="hint-item" data-q="Сталинград">Сталинград</span><span class="hint-item" data-q="Жуков">Жуков</span><span class="hint-item" data-q="§33">§33</span><span class="hint-item" data-q="374">374</span><span class="hint-item" data-q="1944">1944</span></div>';
@@ -580,8 +784,8 @@ const root = $('#app'); root.innerHTML = '';
 const wrap = el('div', 'view battle-page');
 const back = el('a', 'back'); back.href = '#/'; back.innerHTML = '← Назад к хронике'; wrap.appendChild(back);
 const titleBox = el('div', 'page-title');
-titleBox.innerHTML = '<span class="num">№ ' + b.index + ' · ' + b.year + '</span><h1>' + escapeHtml(b.title) + '</h1><div class="date">' + escapeHtml(b.date) + '</div><span class="medinsky-line">' + escapeHtml(b.para) + '</span>';
-wrap.appendChild(titleBox);
+titleBox.innerHTML = '<span class="medal"><span>' + b.index + '</span></span><span class="num">№ ' + b.index + ' · ' + b.year + '</span><h1>' + escapeHtml(b.title) + '</h1><div class="date">' + escapeHtml(b.date) + '</div><span class="medinsky-line">' + escapeHtml(b.para) + '</span>';
+titleBox.insertAdjacentHTML('beforeend', '<div class="scrap" aria-hidden="true"><div class="scrap-in">…пишу тебе наскоро, дорогая мама. Я жив и здоров, ты не тревожься. Как станет полегче, напишу подробнее. Береги себя и сестрёнку…</div></div>'); wrap.appendChild(titleBox);
 const cmd = el('div', 'section commanders');
 cmd.innerHTML = '<div class="section-label">' + escapeHtml(b.commandersLabel) + '</div><p class="section-text names">' + escapeHtml(b.commanders) + '</p>';
 wrap.appendChild(cmd);
@@ -589,6 +793,13 @@ const course = el('div', 'section course');
 let courseHTML = '<div class="section-label">Ход битвы</div>';
 b.course.forEach(p => { courseHTML += '<p class="section-text">' + escapeHtml(p) + '</p>'; });
 course.innerHTML = courseHTML; wrap.appendChild(course);
+{ const items = DEEP[b.id] || []; const facts = FACTS[b.id] || []; const d = el('div', 'section deep');
+let dh = '<i class="sp s1"></i><i class="sp s2"></i><i class="sp s3"></i><i class="sp s4"></i><i class="sp s5"></i><i class="cn c1"></i><i class="cn c2"></i><i class="cn c3"></i><i class="cn c4"></i><div class="deep-head"><div class="section-label">Углублённое изучение</div><div class="orn-line">⚜</div><p class="deep-hint">Нажмите на пункт, чтобы раскрыть подробности.</p></div>';
+items.forEach(x => { dh += '<div class="deep-item"><button class="deep-q" aria-expanded="false"><span class="plus"></span>' + escapeHtml(x.h) + '</button><div class="deep-a"><div><p>' + escapeHtml(x.t) + '</p></div></div></div>'; });
+if(facts.length){ dh += '<div class="mini-title">Ещё факты</div><ul class="mini-facts">'; facts.forEach(t => { dh += '<li>' + escapeHtml(t) + '</li>'; }); dh += '</ul>'; }
+d.innerHTML = dh; wrap.appendChild(d);
+d.querySelectorAll('.deep-q').forEach(btn => btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!open)); btn.nextElementSibling.classList.toggle('open', !open); }));
+}
 const map = el('div', 'section map-section');
 map.innerHTML = '<div class="section-label">Карта-схема</div><div class="map-frame"><img src="' + b.img + '" alt="' + escapeHtml(b.title) + '" loading="lazy"></div><p class="map-caption">' + escapeHtml(b.imgCaption) + '</p>';
 wrap.appendChild(map);
